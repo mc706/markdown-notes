@@ -1,0 +1,24 @@
+<div class="page page-notes" layout="vertical" layout-sm="horizontal" layout-padding flex>
+    <aside flex layout="vertical">
+        <material-content class="material-whiteframe-z1" flex layout="vertical">
+            <material-toolbar class="material-theme-light material-toolbar-tools">
+                <input ng-model="newNote.title" placeholder="Note Title">
+            </material-toolbar>
+            <material-content flex layout="vertical">
+                <textarea ng-model="newNote.content" flex ng-keyup="parseTasks(newNote)"></textarea>
+            </material-content>
+        </material-content>
+    </aside>
+    <main flex layout="vertical">
+        <material-content class="material-whiteframe-z1" flex>
+            <material-toolbar class="material-theme-light material-toolbar-tools">
+                <h3>Preview</h3>
+                <i class="fa fa-2x fa-save upper-right" ng-click="saveNote(newNote)"></i>
+            </material-toolbar>
+            <material-content class="material-content-padding" flex>
+                <div btf-markdown="newNote.content" layout-padding>
+                </div>
+            </material-content>
+        </material-content>
+    </main>
+</div>

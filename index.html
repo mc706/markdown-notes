@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-ng-app="markdown-notes">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Markdown Notes</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="notes, markdown, action items">
+    <meta name="description" content="A markdown notes take program that supports action items">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body ng-controller="GlobalController" ng-cloak layout="vertical">
+<header>
+    <material-toolbar class="material-theme-dark" layout="horiztonal">
+        <div ng-click="go()">Markdown Notes</div>
+    </material-toolbar>
+</header>
+<material-content class="main" layout="horizontal" layout-fill>
+    <!--left pane-->
+    <div flex ng-view layout="vertical"></div>
+    <!--/left pane-->
+    <!--task panel-->
+    <div flex="20" layout-padding layout="vertical">
+        <div class="page tasks" layout="vertical" flex>
+            <material-content class="material-whiteframe-z1" flex layout=vertical>
+                <material-toolbar class="material-theme-light">
+                    <h3>Tasks</h3>
+                </material-toolbar>
+                <material-list flex>
+                    <material-list-item ng-repeat="task in tasks">
+                        <material-item-content>
+                            <div class="material-tile-content" layout="vertical" align="center" class="task">
+                                <strong class="task-description">{{task.description}}</strong>
+                                <span class="task-owner" ng-if="task.owner">{{task.owner}}</span>
+                                <span class="task-date" ng-if="task.date">{{task.date}}</span>
+                            </div>
+                        </material-item-content>
+                    </material-list-item>
+                </material-list>
+            </material-content>
+        </div>
+    </div>
+    <!--/task panel-->
+</material-content>
+</div>
+
+<!--vendor scripts -->
+<script src="scripts/vendor/angular.js"></script>
+<script src="scripts/vendor/angular-animate.js"></script>
+<script src="scripts/vendor/angular-cookies.js"></script>
+<script src="scripts/vendor/angular-material.js"></script>
+<script src="scripts/vendor/angular-route.js"></script>
+<script src="scripts/vendor/angular-sanitize.js"></script>
+<script src="scripts/vendor/angular-touch.js"></script>
+<script src="scripts/vendor/angular-local-storage.js"></script>
+<script src="scripts/vendor/md5.js"></script>
+<script src="scripts/vendor/showdown.js"></script>
+<script src="scripts/vendor/markdown.js"></script>
+
+<!--/vendor scripts -->
+<!-- angular app -->
+<script src="app/app.js"></script>
+<script src="app/controllers/homeController.js"></script>
+<script src="app/controllers/globalController.js"></script>
+<script src="app/controllers/notesController.js"></script>
+<!--/angular app -->
+</body>
+</html>

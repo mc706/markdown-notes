@@ -1,0 +1,30 @@
+<div class="page page-home" layout=horizontal layout-padding flex>
+    <div flex="40" layout="vertical">
+        <material-content class="material-whiteframe-z1" layout-fill layout="vertical" flex>
+            <material-toolbar class="material-theme-light">
+                <h3>Notes</h3>
+                <i class="fa fa-2x fa-plus upper-right" ng-click="go('new')"></i>
+            </material-toolbar>
+            <material-list layout="vertical" flex>
+                <material-item ng-repeat="note in notes" role="listitem" ng-click="go(note.slug)">
+                    <material-item-content>
+                        <div class="material-tile-content material-content-padding" layout="horizontal" layout-padding>
+                            <span class="note-title">{{note.title}}</span>
+                        </div>
+                    </material-item-content>
+                    <material-divider ng-if="!$last" class="ng-scope"></material-divider>
+                </material-item>
+            </material-list>
+        </material-content>
+    </div>
+    <div flex layout="vertical">
+        <material-content class="material-whiteframe-z1" flex layout="vertical">
+            <material-toolbar class="material-theme-light">
+                <h3>{{selectedNote.title}}</h3>
+                <i class="fa fa-2x upper-right fa-edit" ng-show="selectedNote" ng-click="go(selectedNote.slug, 'edit')"></i>
+            </material-toolbar>
+            <div btf-markdown="selectedNote.content" layout-padding flex>
+            </div>
+        </material-content>
+    </div>
+</div>

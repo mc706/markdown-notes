@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: lightgrey;
+  height: 100%;
+}
+
+[ng-click] {
+  cursor: pointer;
+}
+
+div.page {
+  material-content {
+    background-color: white;
+  }
+}
+
+material-toolbar {
+  padding: 0 15px;
+}
+
+form {
+  input {
+    width: 100%;
+  }
+}
+
+.upper-right {
+  position: absolute;
+  top:15px;
+  right: 15px;
+}
+.upper-left {
+  position: absolute;
+  top:15px;
+  left:15px;
+}
+.note-title {
+  margin-left: 15px;
+}
+.task {
+  padding:15px;
+}
