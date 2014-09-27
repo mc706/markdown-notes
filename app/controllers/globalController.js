@@ -73,7 +73,10 @@ app.controller("GlobalController", function ($scope, $log, $location, localStora
         });
         if (newNote && newNote.content) {
             angular.forEach(newNote.content.split('\n'), function (line) {
-                var results = taskReg.exec(line);
+                for (i = 0; i < taskRegs.length; i ++) {
+                    results = taskRegs[i].exec(line);
+                    if (taskRegs[i].test(line)) break;
+                }
                 if (results && results.length > 2) {
                     $scope.tasks.push({
                         "description": results[1],
