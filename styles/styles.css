@@ -9995,6 +9995,8 @@ body {
 
 div.page material-content {
   background-color: white; }
+div.page.tasks material-content {
+  margin: -20px; }
 
 material-toolbar {
   padding: 0 15px; }

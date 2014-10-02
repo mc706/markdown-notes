@@ -15,6 +15,11 @@ div.page {
   material-content {
     background-color: white;
   }
+  &.tasks {
+    material-content{
+      margin: -20px;
+    }
+  }
 }
 
 material-toolbar {
