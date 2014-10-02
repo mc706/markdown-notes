@@ -1,9 +1,9 @@
 app.controller("GlobalController", function ($scope, $log, $location, localStorageService) {
     'use strict';
     var taskRegs = [
-        /^\&(.*)@(.*)\((.*)\)$/i,
-        /^\&(.*)@(.*)$/i,
-        /^\&(.*)$/i
+        /^\!(.*)@(.*)\((.*)\)$/i,
+        /^\!(.*)@(.*)$/i,
+        /^\!(.*)$/i
     ];
     $log.debug('GlobalController Initialized');
 
