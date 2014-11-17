@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#v5
+#v7
 index.html
 scripts/vendor/angular.js
 scripts/vendor/angular-animate.js
@@ -12,7 +12,7 @@ scripts/vendor/angular-touch.js
 scripts/vendor/markdown.js
 scripts/vendor/md5.js
 scripts/vendor/showdown.js
-scripts/vendor/showdown.js
+scripts/json/welcome.json
 app/controllers/globalController.js
 app/controllers/homeController.js
 app/controllers/notesController.js
